@@ -1,0 +1,23 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Detalles Peliculas
+    </ion-title>
+  </ion-toolbar>
+ 
+  <ion-searchbar placeholder="Busca tu pelicula aqui..." animated (ionChange)="onSearchTerm($event)" color=dark></ion-searchbar>
+
+ 
+</ion-header>
+
+<ion-content [fullscreen]="true"  class="background">
+<ion-list >
+
+   
+  <ion-label>
+    <ion-item *ngFor="let pelicula of peliculas.Search" [routerLink]="['./detalles-peliculas']"  (click)="algoHace(pelicula.Title)" color=dark>
+      {{pelicula.Title}}
+    </ion-item>
+  </ion-label>
+</ion-list>
+</ion-content>
